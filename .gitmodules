@@ -1,0 +1,6 @@
+[submodule "dependencies/jsoncpp"]
+	path = dependencies/jsoncpp
+	url = git@github.com:jeanpantoja/jsoncpp.git
+[submodule "dependencies/libjson-rpc-cpp"]
+	path = dependencies/libjson-rpc-cpp
+	url = git@github.com:jeanpantoja/libjson-rpc-cpp.git
