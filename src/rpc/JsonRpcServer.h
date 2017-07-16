@@ -16,6 +16,11 @@ namespace rpc
             ~JsonRpcServer();
 
             /**
+             * Start server without block the thread
+             *
+             * @throws lunar::rpc::RpcException If failed at network bind
+             * @throws lunar::rpc::RpcException If failed at network listen
+             * @throws lunar::rpc::RpcException If failed at start a new thread
              * */
             void Start();
 
