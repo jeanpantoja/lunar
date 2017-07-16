@@ -3,7 +3,12 @@
 #include <stdexcept>
 #include <string>
 
-#define LUNAR_EXCEPTION_MSG( MSG ) ( std::string( __PRETTY_FUNCTION__ ) + MSG )
+#define LUNAR_EXCEPTION_MSG( MSG ) \
+    ( \
+      std::string( __PRETTY_FUNCTION__ ) + \
+      std::string( ": " ) + \
+      MSG \
+    )
 
 namespace lunar
 {
