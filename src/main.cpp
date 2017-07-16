@@ -1,10 +1,10 @@
 #include <iostream>
+#include <cstdio>
+#include "core/Lunar.h"
 
 int main( int argc, char **argv )
 {
-    std::cout
-        << "First "
-        << std::endl;
-    return 0;
+    lunar::core::Lunar lunar;
+    return lunar.Exec( argc, argv );
 }
 
