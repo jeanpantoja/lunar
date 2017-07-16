@@ -1,7 +1,7 @@
 CURRENT_DIR=$(shell pwd)
 JSONCPP_INC_DIR=$(CURRENT_DIR)/jsoncpp/include
 
-all: libjsoncpp.a libjsonrpc-cpp.a
+all: libjsoncpp.a libjsonrpc-cpp.a libcgicc.a
 
 libjsoncpp.a:
 	cd jsoncpp && \
@@ -28,5 +28,14 @@ libjsonrpc-cpp.a:
 	$(MAKE) && \
 	ln -sf $(CURRENT_DIR)/jsonrpc-cpp/src/.libs/libjsonrpc-cpp.a $(CURRENT_DIR)
 
+libcgicc.a:
+	cd cgicc && \
+	rm -rfv build && \
+	mkdir -p build && \
+	cd build && \
+	cmake .. && \
+	$(MAKE) && \
+	ln -sf $(CURRENT_DIR)/cgicc/build/libcgicc.a $(CURRENT_DIR)
+
 clean:
-	rm -f libjsoncpp.a libjsonrpc-cpp.a
+	rm -f libjsoncpp.a libjsonrpc-cpp.a libcgicc.a
