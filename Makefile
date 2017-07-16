@@ -1,7 +1,8 @@
 PROGRAM=lunar
-SRC=src/main.cpp
+INCLUDE+= -Isrc/
 INCLUDE+= -Idependencies/jsoncpp/include
 INCLUDE+= -Idependencies/jsonrpc-cpp/include/
+SRC+= $(shell find src/ -name "*.cpp" )
 COMPILER=g++
 CPPFLAGS= -O2
 LDFLAGS=
