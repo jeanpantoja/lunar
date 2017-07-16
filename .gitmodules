@@ -6,3 +6,7 @@
 	path = dependencies/jsonrpc-cpp
 	url = git@github.com:jeanpantoja/jsonrpc-cpp.git
 	ignore = untracked
+[submodule "dependencies/cgicc"]
+	path = dependencies/cgicc
+	url = git@github.com:jeanpantoja/cgicc.git
+	ignore = untracked
