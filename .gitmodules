@@ -4,3 +4,6 @@
 [submodule "dependencies/libjson-rpc-cpp"]
 	path = dependencies/libjson-rpc-cpp
 	url = git@github.com:jeanpantoja/libjson-rpc-cpp.git
+[submodule "dependencies/jsonrpc-cpp"]
+	path = dependencies/jsonrpc-cpp
+	url = git@github.com:jeanpantoja/jsonrpc-cpp.git
