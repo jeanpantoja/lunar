@@ -3,6 +3,8 @@
 #include <stdexcept>
 #include <string>
 
+#define LUNAR_EXCEPTION_MSG( MSG ) ( std::string( __PRETTY_FUNCTION__ ) + MSG )
+
 namespace lunar
 {
     class LunarException : public std::exception
