@@ -10,3 +10,4 @@
 	path = dependencies/cgicc
 	url = git@github.com:jeanpantoja/cgicc.git
 	ignore = untracked
+	ignore = dirty
