@@ -1,6 +1,7 @@
 #include "rpc/JsonRpcServer.h"
 
 #include <cstddef>
+#include <iostream>
 
 #include "rpc/RpcException.h"
 
@@ -35,19 +36,33 @@ namespace rpc
 
     void JsonRpcServer::Start()
     {
-        if( ! this->Bind() )
+        if( runing )
         {
-            throw RpcException( LUNAR_EXCEPTION_MSG( "Failed at network bind" ) );
+            return;
         }
 
-        if( ! this->Listen() )
+        runing = true;
+        try
         {
-            throw RpcException( LUNAR_EXCEPTION_MSG( "Failed at network listen" ) );
-        }
+            if( ! this->Bind() )
+            {
+                throw RpcException( LUNAR_EXCEPTION_MSG( "Failed at network bind" ) );
+            }
 
-        if( pthread_create( &thread, NULL, JsonRpcServer::Run, this ) != PTHREAD_SUCCESS )
+            if( ! this->Listen() )
+            {
+                throw RpcException( LUNAR_EXCEPTION_MSG( "Failed at network listen" ) );
+            }
+
+            if( pthread_create( &thread, NULL, JsonRpcServer::Run, this ) != PTHREAD_SUCCESS )
+            {
+                throw RpcException( LUNAR_EXCEPTION_MSG( "Failed at init thread" ) );
+            }
+        }
+        catch( const std::exception & e )
         {
-            throw RpcException( LUNAR_EXCEPTION_MSG( "Failed at init thread" ) );
+            runing = false;
+            throw e;
         }
     }
 
@@ -57,6 +72,7 @@ namespace rpc
         {
             runing = false;
             pthread_join( thread, NULL );
+            Close();
         }
     }
 
@@ -68,6 +84,7 @@ namespace rpc
         while( server.runing )
         {
             server.WaitMessage( WAIT_MSG_TIME );
+            std::cout << "Listening ..." << std::endl;
         }
 
         return NULL;
