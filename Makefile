@@ -6,7 +6,7 @@ SRC+= $(shell find src/ -name "*.cpp" )
 COMPILER=g++
 CPPFLAGS= -O2
 LDFLAGS=
-LIBS= -ljsonrpc-cpp -ljsoncpp
+LIBS= -ljsonrpc-cpp -ljsoncpp -lpthread
 PATHLIB= -Ldependencies
 
 all:
