@@ -4,7 +4,7 @@ INCLUDE+= -Idependencies/jsoncpp/include
 INCLUDE+= -Idependencies/jsonrpc-cpp/include/
 SRC+= $(shell find src/ -name "*.cpp" )
 COMPILER=g++
-CPPFLAGS= -O2
+CPPFLAGS= -O2 -std=c++11
 LDFLAGS=
 LIBS= -ljsonrpc-cpp -ljsoncpp -lpthread
 PATHLIB= -Ldependencies
