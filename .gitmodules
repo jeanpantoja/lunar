@@ -1,6 +1,8 @@
 [submodule "dependencies/jsoncpp"]
 	path = dependencies/jsoncpp
 	url = git@github.com:jeanpantoja/jsoncpp.git
+	ignore = untracked
 [submodule "dependencies/jsonrpc-cpp"]
 	path = dependencies/jsonrpc-cpp
 	url = git@github.com:jeanpantoja/jsonrpc-cpp.git
+	ignore = untracked
