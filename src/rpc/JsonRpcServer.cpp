@@ -84,7 +84,6 @@ namespace rpc
         while( server.runing )
         {
             server.WaitMessage( WAIT_MSG_TIME );
-            std::cout << "Listening ..." << std::endl;
         }
 
         return NULL;
