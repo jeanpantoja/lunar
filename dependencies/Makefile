@@ -5,6 +5,7 @@ all: libjsoncpp.a libjsonrpc-cpp.a
 
 libjsoncpp.a:
 	cd jsoncpp && \
+	rm -rfv build && \
 	mkdir -p build && \
 	cd build && \
 	cmake -DCMAKE_BUILD_TYPE=release \
