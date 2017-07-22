@@ -1,4 +1,8 @@
 #jsoncpp
+
+set( JSONCPP_WITH_TESTS OFF )
+set( JSONCPP_WITH_POST_BUILD_UNITTEST OFF )
+
 add_subdirectory(
     ${CMAKE_SOURCE_DIR}/dependencies/jsoncpp
 )
