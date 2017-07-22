@@ -22,6 +22,11 @@ add_custom_target(
     COMMAND make
 )
 
+#cgicc
+add_subdirectory(
+    ${CMAKE_SOURCE_DIR}/dependencies/cgicc
+)
+
 add_custom_target(
     lunar_dependencies
 )

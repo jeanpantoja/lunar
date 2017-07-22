@@ -2,14 +2,6 @@ cmake_minimum_required(VERSION 3.8)
 
 project( lunar )
 
-file(
-    GLOB SOURCES
-    src/*.cpp
-    src/**/*.cpp
-)
-
-set( CMAKE_CXX_STANDARD 11 )
-
 include_directories(
     ${CMAKE_SOURCE_DIR}/src
     ${CMAKE_SOURCE_DIR}/dependencies/jsoncpp/include
@@ -19,6 +11,15 @@ include_directories(
 add_subdirectory(
     ${CMAKE_SOURCE_DIR}/dependencies
 )
+
+
+file(
+    GLOB SOURCES
+    src/*.cpp
+    src/**/*.cpp
+)
+
+set( CMAKE_CXX_STANDARD 11 )
 
 add_executable(
     lunar
