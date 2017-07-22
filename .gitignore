@@ -4,3 +4,5 @@ lunar
 *.vim
 tags
 dependencies/libfcgi-2.4.0.orig/*
+CMakeFiles/*
+build/*

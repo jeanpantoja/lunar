@@ -1,5 +1,6 @@
-#include "LunarException.h"
 #pragma once
+
+#include "LunarException.h"
 
 namespace lunar
 {
