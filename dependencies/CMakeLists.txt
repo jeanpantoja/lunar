@@ -20,6 +20,7 @@ add_custom_target(
     DEPENDS ${CMAKE_SOURCE_DIR}/dependencies/jsonrpc-cpp/Makefile
     WORKING_DIRECTORY ${CMAKE_SOURCE_DIR}/dependencies/jsonrpc-cpp
     COMMAND make
+    COMMENT "Compiling jsonrpc-cpp"
 )
 
 #cgicc
@@ -35,4 +36,5 @@ add_dependencies(
     lunar_dependencies
     jsoncpp_lib_static
     jsonrpc-cpp_lib_static
+    cgicc
 )
